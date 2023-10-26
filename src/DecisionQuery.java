@@ -5,12 +5,12 @@ import java.util.function.Function;
  */
 public class DecisionQuery<T extends IEntity> extends Decision<T> {
 
-    private String title;
-    private Decision positive;
-    private Decision negative;
-    private Function<T, Boolean> test;
+    private final String title;
+    private final Decision<T> positive;
+    private final Decision<T> negative;
+    private final Function<T, Boolean> test;
 
-    public DecisionQuery(String title, Decision positive, Decision negative, Function<T, Boolean> test) {
+    public DecisionQuery(String title, Decision<T> positive, Decision<T> negative, Function<T, Boolean> test) {
         this.title = title;
         this.positive = positive;
         this.negative = negative;
